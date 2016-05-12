@@ -31,11 +31,11 @@
 
   <ion-content>
   <ion-list>
-    <ion-item ng-repeat="item in items" ng-click="changeStatus()" on-hold="deleteItem()" ng-if="item.needed == false" class="needed">
+    <ion-item ng-repeat="item in items | orderBy:'name'" ng-click="changeStatus()" on-hold="deleteItem()" ng-if="item.needed == false" class="needed">
       {{item.name}}
       <span class="ion-close neededicon"></span>
     </ion-item>
-    <ion-item ng-repeat="item in items" ng-click="changeStatus()" on-hold="deleteItem()" ng-if="item.needed == true" class="notneeded">
+    <ion-item ng-repeat="item in items | orderBy:'name'" ng-click="changeStatus()" on-hold="deleteItem()" ng-if="item.needed == true" class="notneeded">
        {{item.name}}
        <span class="ion-checkmark-round notneededicon"></span>
     </ion-item>
