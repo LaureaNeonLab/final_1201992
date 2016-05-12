@@ -1,25 +1,42 @@
-/* Empty. Add your own CSS if you like */
-
-.bar-dark{
-    background-color: #801414 !important;
+.bar-header{
+    background-color:  #00b33c;
 }
 
-.item-input{
-    background-color:#f2f2f2;
-    border: 1px solid #888008;
+.title{
+    color:#fff;
 }
 
-.cancelbutton{
-    background-color: #ff0000;
-    color:  #ffffff;
-    width:49% !important;
-    display:inline-block;
-     margin:0 !important;
+.additem, .additem:hover, .additem:active{
+  color:#fff;
+  border: 1px solid white;
 }
 
-.addbutton{
-    width:49% !important;
-    display:inline-block;
-     margin:0 !important;
+.needed{
+    background-color: #ffff99;
+    border: 0.5px solid white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+.notneeded{
+    background-color: #99ff99;
+    border: 0.5px solid white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+.neededicon{
+     position:absolute;
+    right:26px;
+    font-size: 1.3em;
+    color:#ff3333;
+    
+}
+
+.notneededicon{
+    position:absolute;
+    right:26px;
+    font-size: 1.3em;
+    color:green;
 }
 

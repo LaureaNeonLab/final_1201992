@@ -24,15 +24,20 @@
 
 <body ng-app="starter" ng-controller="ListCtrl">
     <ion-header-bar class="top">
-      <h1 class="title">Items</h1>
-      <button class="button button-icon ion-plus" ng-click="addItem()">
+      <h1 class="title">Shopping list</h1>
+      <button class="button button-icon ion-ios-cart additem" ng-click="addItem()">
       </button>
     </ion-header-bar>
-    
+
   <ion-content>
   <ion-list>
-    <ion-item ng-repeat="item in items">
+    <ion-item ng-repeat="item in items" ng-click="changeStatus()" on-hold="deleteItem()" ng-if="item.needed == false" class="needed">
       {{item.name}}
+      <span class="ion-close neededicon"></span>
+    </ion-item>
+    <ion-item ng-repeat="item in items" ng-click="changeStatus()" on-hold="deleteItem()" ng-if="item.needed == true" class="notneeded">
+       {{item.name}}
+       <span class="ion-checkmark-round notneededicon"></span>
     </ion-item>
   </ion-list>
 </ion-content>
