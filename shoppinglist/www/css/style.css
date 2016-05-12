@@ -1,14 +1,19 @@
 .bar-header{
     background-color:  #00b33c;
+    -webkit-box-shadow: -1px 3px 25px -4px rgba(68,143,53,1);
+    -moz-box-shadow: -1px 3px 25px -4px rgba(68,143,53,1);
+    box-shadow: -1px 3px 25px -4px rgba(68,143,53,1);
+    border:none;
 }
 
 .title{
     color:#fff;
+    font-size: 1.7em !important;
 }
 
 .additem, .additem:hover, .additem:active{
   color:#fff;
-  border: 1px solid white;
+  border: 0.12em solid white;
 }
 
 .needed{
