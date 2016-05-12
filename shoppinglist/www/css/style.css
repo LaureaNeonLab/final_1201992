@@ -3,3 +3,23 @@
 .bar-dark{
     background-color: #801414 !important;
 }
+
+.item-input{
+    background-color:#f2f2f2;
+    border: 1px solid #888008;
+}
+
+.cancelbutton{
+    background-color: #ff0000;
+    color:  #ffffff;
+    width:49% !important;
+    display:inline-block;
+     margin:0 !important;
+}
+
+.addbutton{
+    width:49% !important;
+    display:inline-block;
+     margin:0 !important;
+}
+
