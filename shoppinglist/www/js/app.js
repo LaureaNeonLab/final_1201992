@@ -48,6 +48,9 @@ angular.module("starter", ["ionic", "firebase"])
       return;
     }
     else{
+         if(!item.deleteAfterPurchase){
+           item.deleteAfterPurchase = false;
+         }
          var needed = false;
          $scope.items.$add({
             "name": item.name,
