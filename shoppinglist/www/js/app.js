@@ -5,21 +5,19 @@ angular.module("starter", ["ionic", "firebase"])
   return $firebaseArray(itemsRef);
 })
 
-.controller("ListCtrl", function($scope, Items) {
+.controller("ListCtrl", function($scope, Items, $ionicModal) {
   $scope.items = Items;
-  $scope.addItem = function() {
-    var name = prompt("Add item:");
-    var needed = false;
-    if (name) {
-      $scope.items.$add({
-        "name": name,
-        "needed": needed
-      });
-    }
-  };
+  
+  $scope.addItem = function(value) {
+    
+   
+  }
 
   $scope.changeStatus = function(){
-     if(this.item.needed == false){
+     if(this.item.deleteAfterPurchase == true){
+        $scope.items.$remove(this.item);
+     }
+     else if(this.item.needed == false){
         this.item.needed = true;
         $scope.items.$save(this.item);
      }else{
@@ -35,5 +33,36 @@ angular.module("starter", ["ionic", "firebase"])
       }else{
         return;
       }
+  }
+  
+   // Create our modal
+  $ionicModal.fromTemplateUrl('new-item.html', function(modal) {
+    $scope.itemModal = modal;
+  }, {
+    scope: $scope
+  });
+
+  //Create items
+  $scope.createItem = function(item){
+    if(!item){
+      return;
+    }
+    else{
+         var needed = false;
+         $scope.items.$add({
+            "name": item.name,
+            "needed": needed,
+            "deleteAfterPurchase": item.deleteAfterPurchase
+         });
+      }
+    }
+
+  $scope.newItem = function() {
+    console.log('asd');
+    $scope.itemModal.show();
+  };
+
+  $scope.closeNewItem = function() {
+    $scope.itemModal.hide();
   }
 });
