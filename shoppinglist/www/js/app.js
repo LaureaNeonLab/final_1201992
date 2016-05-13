@@ -61,7 +61,6 @@ angular.module("starter", ["ionic", "firebase"])
     }
 
   $scope.newItem = function() {
-    console.log('asd');
     $scope.itemModal.show();
   };
 
